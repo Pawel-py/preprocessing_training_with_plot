@@ -12,8 +12,8 @@ df.info()
 
 
 total_charges_median = df[df['TotalCharges'] != ' ']['TotalCharges'].astype('float').median()
-df['TotalCharges'] = df['TotalCharges'].astype('float')
 df['TotalCharges'][df['TotalCharges'] == ' '] = total_charges_median
+df['TotalCharges'] = df[df['TotalCharges'] != ' ']['TotalCharges'].astype('float')
 
 df['TotalCharges'].value_counts()
 
